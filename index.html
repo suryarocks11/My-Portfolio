@@ -58,7 +58,8 @@
       {"@type":"EducationalOccupationalCredential","name":"Collibra Ranger"},
       {"@type":"EducationalOccupationalCredential","name":"Collibra Solution Architect"},
       {"@type":"EducationalOccupationalCredential","name":"DAMA Certified Data Management Professional (CDMP)"},
-      {"@type":"EducationalOccupationalCredential","name":"AWS Certified AI Practitioner"},
+      {"@type":"EducationalOccupationalCredential","name":"AWS Solution Architect"},
+      {"@type":"EducationalOccupationalCredential","name":"Azure Solution Architect"},
       {"@type":"EducationalOccupationalCredential","name":"OneTrust Certified Privacy Professional"},
       {"@type":"EducationalOccupationalCredential","name":"ISO 8000 Master Data Quality Manager"}
     ]
@@ -461,7 +462,7 @@ h2.st .gr{
 #projects{background:white}
 .proj-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .pc{
-  border-radius:28px;padding:2.5rem;border:1px solid var(--border);
+  border-radius:24px;padding:1.9rem;border:1px solid var(--border);
   position:relative;overflow:hidden;cursor:none;
   transition:transform .45s cubic-bezier(.23,1,.32,1),box-shadow .45s,border-color .45s;
 }
@@ -470,23 +471,27 @@ h2.st .gr{
 .pc-2{background:linear-gradient(145deg,#fff0f5 0%,#fff8ec 100%)}
 .pc-3{background:linear-gradient(145deg,#eafff5 0%,#e8f8ff 100%)}
 .pc-4{background:linear-gradient(145deg,#eef1ff 0%,#f0ecff 100%)}
+.pc-5{background:linear-gradient(145deg,#fffbeb 0%,#fff7ed 100%)}
+.pc-6{background:linear-gradient(145deg,#ecfeff 0%,#f0fffe 100%)}
 .pc-1:hover{box-shadow:0 40px 100px rgba(91,62,255,.15);border-color:rgba(91,62,255,.25)}
 .pc-2:hover{box-shadow:0 40px 100px rgba(244,63,94,.12);border-color:rgba(244,63,94,.2)}
 .pc-3:hover{box-shadow:0 40px 100px rgba(16,185,129,.12);border-color:rgba(16,185,129,.2)}
 .pc-4:hover{box-shadow:0 40px 100px rgba(37,99,235,.12);border-color:rgba(37,99,235,.2)}
-.pc-num{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.25em;color:var(--muted);margin-bottom:1.5rem}
+.pc-5:hover{box-shadow:0 40px 100px rgba(245,158,11,.12);border-color:rgba(245,158,11,.22)}
+.pc-6:hover{box-shadow:0 40px 100px rgba(6,182,212,.12);border-color:rgba(6,182,212,.22)}
+.pc-num{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.25em;color:var(--muted);margin-bottom:1rem}
 .pc-ico{
-  width:60px;height:60px;border-radius:18px;background:white;
+  width:50px;height:50px;border-radius:14px;background:white;
   display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;
   box-shadow:0 6px 24px rgba(0,0,0,.08);
   transition:transform .35s,box-shadow .35s;
 }
-.pc-ico svg{width:28px;height:28px}
+.pc-ico svg{width:24px;height:24px}
 .pc:hover .pc-ico{transform:scale(1.1) translateY(-3px);box-shadow:0 12px 36px rgba(0,0,0,.12)}
-.pc-name{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;letter-spacing:-.025em;margin-bottom:.35rem;color:var(--ink)}
-.pc-type{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.15em;color:var(--muted);margin-bottom:.9rem;text-transform:uppercase}
-.pc-desc{font-size:.9rem;color:var(--ink2);line-height:1.78;margin-bottom:1.5rem}
-.pc-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem}
+.pc-name{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:800;letter-spacing:-.025em;margin-bottom:.3rem;color:var(--ink)}
+.pc-type{font-family:'JetBrains Mono',monospace;font-size:.58rem;letter-spacing:.15em;color:var(--muted);margin-bottom:.7rem;text-transform:uppercase}
+.pc-desc{font-size:.86rem;color:var(--ink2);line-height:1.72;margin-bottom:1.2rem}
+.pc-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.4rem}
 .pc-tag{font-size:.63rem;font-weight:700;padding:.22rem .65rem;border-radius:100px;background:rgba(255,255,255,.75);color:var(--ink2);border:1px solid rgba(255,255,255,.8)}
 .pc-btn{
   display:inline-flex;align-items:center;gap:.5rem;
@@ -831,7 +836,7 @@ nav{-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
           Certifications
         </div>
         <div class="hcard-val gr">5</div>
-        <div class="hcard-sub">Collibra · AWS · CDMP · ISO · OneTrust</div>
+        <div class="hcard-sub">Collibra · AWS &amp; Azure · CDMP · ISO</div>
         <div class="hcard-bar"><div class="hcard-bar-fill" style="width:100%"></div></div>
       </div>
       <div class="hcard hc3">
@@ -885,7 +890,7 @@ nav{-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
           <div class="cert-ico" style="background:rgba(16,185,129,.1)">
             <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
           </div>
-          <div><div class="cert-name">AWS Certified AI Practitioner</div><div class="cert-org">EARLY ADOPTER · AMAZON WEB SERVICES</div></div>
+          <div><div class="cert-name">AWS &amp; Azure Solution Architect</div><div class="cert-org">AMAZON WEB SERVICES · MICROSOFT AZURE</div></div>
         </div>
         <div class="cert-card">
           <div class="cert-ico" style="background:rgba(244,63,94,.1)">
@@ -1184,6 +1189,30 @@ nav{-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
         <button class="pc-btn">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
       </div>
 
+      <div class="pc pc-5 rev" onclick="openM('m5')">
+        <div class="pc-num">PROJECT 005</div>
+        <div class="pc-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="6" height="6" rx="1"/><rect x="16" y="3" width="6" height="6" rx="1"/><rect x="2" y="15" width="6" height="6" rx="1"/><rect x="16" y="15" width="6" height="6" rx="1"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8"/></svg>
+        </div>
+        <div class="pc-name">E2E Data Governance Deployment</div>
+        <div class="pc-type">Collibra DIC · DG Programme · Informatica IDQ</div>
+        <p class="pc-desc">Full-lifecycle enterprise Data Governance programme centred on <strong>Collibra DIC</strong> — covering policy design, metadata lineage, stewardship workflows and executive reporting, with Informatica IDQ handling data quality validation across global business units.</p>
+        <div class="pc-tags"><span class="pc-tag">Collibra DIC</span><span class="pc-tag">Collibra DGC</span><span class="pc-tag">Informatica IDQ</span><span class="pc-tag">DAMA DMBOK</span></div>
+        <button class="pc-btn">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+
+      <div class="pc pc-6 rev" onclick="openM('m6')">
+        <div class="pc-num">PROJECT 006</div>
+        <div class="pc-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><path d="M9 12h6M8.59 10.59L15.42 7.41M8.59 13.41l6.83 3.18"/></svg>
+        </div>
+        <div class="pc-name">Collibra Custom Integrations</div>
+        <div class="pc-type">SAP · Salesforce · Third-Party Systems</div>
+        <p class="pc-desc">Bespoke bidirectional integration layer connecting Collibra with SAP S/4HANA, Salesforce CRM, and other enterprise systems — enabling real-time metadata sync, data lineage propagation, and governance policy enforcement at source.</p>
+        <div class="pc-tags"><span class="pc-tag">Collibra API</span><span class="pc-tag">SAP S/4HANA</span><span class="pc-tag">Salesforce</span><span class="pc-tag">REST API</span></div>
+        <button class="pc-btn">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1228,7 +1257,7 @@ nav{-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
 <footer>
   <p>© 2025 Surya Gupta · Data &amp; AI Governance Lead · London</p>
   <div id="visit-count"><div class="vc-dot"></div>Visitors: <span class="vc-num" id="vc-num">—</span></div>
-  <p>Collibra Ranger · DAMA CDMP · AWS AI Practitioner</p>
+  <p>Collibra Ranger · DAMA CDMP · AWS &amp; Azure Solution Architect</p>
 </footer>
 
 <!-- ══ MODALS ══ -->
@@ -1345,6 +1374,66 @@ nav{-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px)}
     </ul>
     <div class="m-sttl">Tech Stack</div>
     <div class="m-stack"><span>Collibra DIC</span><span>Alation</span><span>Python</span><span>Snowflake</span><span>AWS S3</span><span>Amazon RDS</span><span>GCP BigQuery</span><span>Tableau</span><span>JDBC</span></div>
+  </div>
+</div>
+
+<div class="ov" id="m5" onclick="closeBg(event,'m5')">
+  <div class="mbox">
+    <button class="mclose" onclick="closeM('m5')">✕</button>
+    <div class="m-ico-lg" style="background:rgba(245,158,11,.1)"><svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="6" height="6" rx="1"/><rect x="16" y="3" width="6" height="6" rx="1"/><rect x="2" y="15" width="6" height="6" rx="1"/><rect x="16" y="15" width="6" height="6" rx="1"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8"/></svg></div>
+    <div class="m-eyebrow">PROJECT 005 · DATA GOVERNANCE</div>
+    <div class="m-title">E2E Data Governance Deployment</div>
+    <div class="m-sub">COLLIBRA DIC · COLLIBRA DGC · INFORMATICA IDQ · DAMA DMBOK</div>
+    <div class="m-div"></div>
+    <div class="m-metrics">
+      <div class="mm"><span class="mm-v">E2E</span><span class="mm-l">FULL LIFECYCLE</span></div>
+      <div class="mm"><span class="mm-v">6+</span><span class="mm-l">BUS. UNITS</span></div>
+      <div class="mm"><span class="mm-v">40%</span><span class="mm-l">DQ UPLIFT</span></div>
+    </div>
+    <div class="m-sttl">Overview</div>
+    <p class="m-txt">A <strong>full-scale enterprise Data Governance programme</strong> built on <strong>Collibra DIC as the primary platform</strong> — defining and enforcing data policy, business glossary, ownership, and end-to-end lineage across global business units. Informatica IDQ provides targeted data quality validation, feeding quality scores and issues back into Collibra DGC stewardship workflows. Fully aligned to <strong>DAMA DMBOK</strong> and ISO 8000 standards.</p>
+    <div class="m-sttl">Key Capabilities</div>
+    <ul class="m-ul">
+      <li>Collibra DIC as the central governance hub: data domains, business glossary, ownership model, and RACI matrix</li>
+      <li>End-to-end data lineage from source systems through transformation layers to BI reports — mapped and maintained in Collibra DIC</li>
+      <li>Stewardship workflows in Collibra DGC for issue tracking, data quality remediation, and formal sign-off</li>
+      <li>Informatica IDQ quality rule library (70+ checks: completeness, accuracy, conformity, consistency) feeding results into Collibra</li>
+      <li>Policy enforcement engine: governance decisions in Collibra propagated back to source systems automatically</li>
+      <li>Executive Data Governance scorecards and KPI dashboards updated automatically each cycle</li>
+      <li>Change management programme: training, runbooks, and governance council facilitation across 6+ business units</li>
+    </ul>
+    <div class="m-sttl">Tech Stack</div>
+    <div class="m-stack"><span>Collibra DIC</span><span>Collibra DGC</span><span>Informatica IDQ</span><span>Informatica IICS</span><span>Python</span><span>Snowflake</span><span>Oracle SQL</span><span>AWS S3</span><span>DAMA DMBOK</span><span>ISO 8000</span></div>
+  </div>
+</div>
+
+<div class="ov" id="m6" onclick="closeBg(event,'m6')">
+  <div class="mbox">
+    <button class="mclose" onclick="closeM('m6')">✕</button>
+    <div class="m-ico-lg" style="background:rgba(6,182,212,.1)"><svg viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="3"/><circle cx="18" cy="5" r="3"/><circle cx="18" cy="19" r="3"/><path d="M9 12h6M8.59 10.59L15.42 7.41M8.59 13.41l6.83 3.18"/></svg></div>
+    <div class="m-eyebrow">PROJECT 006 · INTEGRATION ENGINEERING</div>
+    <div class="m-title">Collibra Custom Integrations</div>
+    <div class="m-sub">SAP S/4HANA · SALESFORCE CRM · BIDIRECTIONAL METADATA SYNC</div>
+    <div class="m-div"></div>
+    <div class="m-metrics">
+      <div class="mm"><span class="mm-v">3+</span><span class="mm-l">SYSTEMS LINKED</span></div>
+      <div class="mm"><span class="mm-v">RT</span><span class="mm-l">REAL-TIME SYNC</span></div>
+      <div class="mm"><span class="mm-v">0</span><span class="mm-l">MANUAL HANDOFFS</span></div>
+    </div>
+    <div class="m-sttl">Overview</div>
+    <p class="m-txt">A <strong>bespoke enterprise integration layer</strong> connecting Collibra DGC bidirectionally with SAP S/4HANA, Salesforce CRM, and other third-party platforms — enabling real-time metadata synchronisation, data lineage propagation across system boundaries, and governance policy enforcement at the point of data creation rather than after the fact.</p>
+    <div class="m-sttl">Key Capabilities</div>
+    <ul class="m-ul">
+      <li>Collibra REST API &amp; Groovy workflow integration with SAP S/4HANA master data objects (Business Partner, Material, GL Account)</li>
+      <li>Salesforce CRM connector syncing object metadata, field lineage, and data classifications into Collibra catalog automatically</li>
+      <li>Bidirectional sync: governance decisions in Collibra pushed back to enforce data standards in SAP and Salesforce</li>
+      <li>Real-time event-driven architecture using webhooks and message queues for zero-latency metadata updates</li>
+      <li>Custom Collibra Edge connector development for proprietary third-party APIs and legacy systems</li>
+      <li>Unified lineage graph spanning Collibra, SAP, Salesforce, and cloud data platforms in a single view</li>
+      <li>Role-based access control synchronised between Collibra and connected systems for consistent data security</li>
+    </ul>
+    <div class="m-sttl">Tech Stack</div>
+    <div class="m-stack"><span>Collibra REST API</span><span>Collibra Edge</span><span>Groovy</span><span>SAP S/4HANA</span><span>Salesforce API</span><span>Python</span><span>REST / Webhooks</span><span>AWS SQS</span><span>Java</span></div>
   </div>
 </div>
 

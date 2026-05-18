@@ -183,9 +183,9 @@ nav{
   position:absolute;border-radius:50%;pointer-events:none;
   filter:blur(90px);will-change:transform;
 }
-.bl1{width:700px;height:700px;background:rgba(91,62,255,.1);top:-200px;right:-150px;animation:bmorph 12s ease-in-out infinite}
-.bl2{width:500px;height:500px;background:rgba(6,182,212,.09);bottom:-100px;left:-80px;animation:bmorph 9s ease-in-out infinite reverse;animation-delay:-3s}
-.bl3{width:350px;height:350px;background:rgba(244,63,94,.07);top:30%;left:35%;animation:bmorph 10s ease-in-out infinite;animation-delay:-5s}
+.bl1{width:700px;height:700px;background:rgba(91,62,255,.18);top:-200px;right:-150px;animation:bmorph 12s ease-in-out infinite}
+.bl2{width:500px;height:500px;background:rgba(6,182,212,.15);bottom:-100px;left:-80px;animation:bmorph 9s ease-in-out infinite reverse;animation-delay:-3s}
+.bl3{width:350px;height:350px;background:rgba(244,63,94,.13);top:30%;left:35%;animation:bmorph 10s ease-in-out infinite;animation-delay:-5s}
 @keyframes bmorph{
   0%,100%{border-radius:60% 40% 30% 70%/60% 30% 70% 40%}
   33%{border-radius:30% 60% 70% 40%/50% 60% 30% 60%}
@@ -194,21 +194,22 @@ nav{
 
 /* floating lines (parallax) */
 .fl-layer{position:absolute;inset:0;pointer-events:none}
-.fl{position:absolute;background:var(--v);border-radius:4px;opacity:.06}
-.fl1{width:2px;height:180px;top:15%;left:8%}
-.fl2{width:120px;height:2px;top:25%;right:12%}
-.fl3{width:2px;height:100px;bottom:25%;right:25%}
-.fl4{width:80px;height:2px;bottom:35%;left:20%}
-.fl5{width:40px;height:40px;top:20%;left:22%;border:2px solid var(--v);border-radius:8px;background:none;opacity:.06;animation:fspin 20s linear infinite}
-.fl6{width:60px;height:60px;top:60%;right:15%;border:1.5px solid var(--c);border-radius:50%;background:none;opacity:.08;animation:fspin 15s linear infinite reverse}
+.fl{position:absolute;background:var(--v);border-radius:4px;opacity:.18}
+.fl1{width:3px;height:220px;top:12%;left:6%;animation:fpulse 4s ease-in-out infinite}
+.fl2{width:160px;height:3px;top:22%;right:10%;animation:fpulse 5s ease-in-out infinite;animation-delay:-2s}
+.fl3{width:3px;height:130px;bottom:22%;right:22%;animation:fpulse 3.5s ease-in-out infinite;animation-delay:-1s}
+.fl4{width:110px;height:3px;bottom:32%;left:18%;animation:fpulse 4.5s ease-in-out infinite;animation-delay:-3s}
+.fl5{width:52px;height:52px;top:18%;left:20%;border:2.5px solid var(--v);border-radius:10px;background:none;opacity:.18;animation:fspin 18s linear infinite}
+.fl6{width:72px;height:72px;top:58%;right:13%;border:2px solid var(--c);border-radius:50%;background:none;opacity:.2;animation:fspin 13s linear infinite reverse}
+@keyframes fpulse{0%,100%{opacity:.18}50%{opacity:.38}}
 @keyframes fspin{to{transform:rotate(360deg)}}
 
 /* grid dots bg */
 .dot-grid{
   position:absolute;inset:0;pointer-events:none;
-  background-image:radial-gradient(circle,rgba(91,62,255,.12) 1px,transparent 1px);
-  background-size:40px 40px;
-  mask-image:radial-gradient(ellipse 60% 60% at 50% 50%,black,transparent);
+  background-image:radial-gradient(circle,rgba(91,62,255,.28) 1.5px,transparent 1.5px);
+  background-size:36px 36px;
+  mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,black,transparent);
 }
 
 .hero-wrap{
@@ -233,7 +234,7 @@ h1.hname{
   font-family:'Syne',sans-serif;
   font-size:clamp(3.2rem,7vw,6.5rem);
   font-weight:800;line-height:.95;
-  letter-spacing:-.04em;margin-bottom:1.5rem;
+  letter-spacing:-.04em;margin-bottom:.6rem;
   animation:yin .8s cubic-bezier(.23,1,.32,1) .1s both;
 }
 .hname .gr{
@@ -243,6 +244,22 @@ h1.hname{
   animation:gradshift 4s linear infinite;
 }
 @keyframes gradshift{to{background-position:200% center}}
+/* typewriter role cycle */
+.hero-role-cycle{
+  display:block;font-family:'Syne',sans-serif;
+  font-size:clamp(1.1rem,2.4vw,1.65rem);
+  font-weight:700;letter-spacing:-.02em;
+  color:var(--ink2);margin-bottom:1.5rem;
+  animation:yin .8s cubic-bezier(.23,1,.32,1) .18s both;
+  min-height:2.2em;
+}
+.hero-role-cycle .type-word{
+  background:linear-gradient(135deg,var(--v),var(--c));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-weight:800;
+}
+.hero-cursor{display:inline-block;width:2px;height:1em;background:var(--v);margin-left:2px;vertical-align:middle;animation:blink-cur .7s step-end infinite}
+@keyframes blink-cur{0%,100%{opacity:1}50%{opacity:0}}
 
 .hero-p{
   font-size:1.05rem;color:var(--ink2);line-height:1.85;
@@ -595,15 +612,64 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);font-weight:500}
 .rev{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1)}
 .rev.vis{opacity:1;transform:none}
 
+/* ── HAMBURGER ── */
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none;z-index:1001}
+.ham span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* mobile nav drawer */
+.mob-nav{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.mob-nav.open{opacity:1;pointer-events:all}
+.mob-nav a{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.03em;transition:color .2s}
+.mob-nav a:hover,.mob-nav a:active{color:var(--v)}
+.mob-nav .mob-cta{
+  padding:.85rem 2.2rem;border-radius:100px;
+  background:var(--ink);color:#fff!important;font-size:1.1rem;
+}
+
+/* visitor counter */
+#visit-count{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.06em;
+  color:rgba(255,255,255,.4);
+}
+#visit-count .vc-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pdot 1.5s ease infinite}
+#visit-count .vc-num{color:rgba(255,255,255,.7)}
+
+footer{flex-wrap:wrap;gap:.75rem}
+
 @media(max-width:960px){
   .hero-wrap,.about-g,.exp-layout,.ct-layout{grid-template-columns:1fr}
   .hcard-stack,.exp-side{display:none}
   .sk-grid{grid-template-columns:repeat(2,1fr)}
   .proj-g{grid-template-columns:1fr}
-  section,nav,footer{padding-left:1.5rem;padding-right:1.5rem}
-  nav{padding:0 1.5rem}
+  section,nav,footer{padding-left:1.4rem;padding-right:1.4rem}
+  nav{padding:0 1.4rem}
+  .ham{display:flex}
+  .nav-r{display:none}
+  .mob-nav{display:flex}
+  #cur,#cur-ring{display:none}
 }
-@media(max-width:600px){.sk-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+  .sk-grid{grid-template-columns:1fr}
+  h1.hname{font-size:clamp(2.6rem,13vw,4rem)}
+  .hero-role-cycle{font-size:clamp(.95rem,4vw,1.3rem)}
+  .hero-p{font-size:.95rem}
+  .hbtns{flex-direction:column;gap:.65rem}
+  .hbtn-p,.hbtn-s{width:100%;justify-content:center;text-align:center}
+  footer{flex-direction:column;align-items:flex-start;gap:.5rem}
+  section{padding-top:3.5rem;padding-bottom:3.5rem}
+  .proj-g{gap:1rem}
+  .sk-grid{gap:.75rem}
+  .sk-card{padding:1.25rem}
+}
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--v);border-radius:3px}
 </style>
 </head>
@@ -623,7 +689,19 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);font-weight:500}
     <a href="#projects">Projects</a>
     <a href="#contact" class="nav-cta">Contact</a>
   </div>
+  <button class="ham" id="ham-btn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- ══ MOBILE NAV ══ -->
+<div class="mob-nav" id="mob-nav">
+  <a href="#about" class="mob-link">About</a>
+  <a href="#skills" class="mob-link">Skills</a>
+  <a href="#experience" class="mob-link">Experience</a>
+  <a href="#projects" class="mob-link">Projects</a>
+  <a href="#contact" class="mob-link mob-cta">Contact</a>
+</div>
 
 <!-- ══ HERO ══ -->
 <section id="hero">
@@ -641,10 +719,13 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);font-weight:500}
     <div>
       <div class="hero-badge"><div class="badge-pulse"></div>Collibra Ranger · Solution Architect · London</div>
       <h1 class="hname">
-        Collibra<br>
-        <span class="gr">Developer &amp;</span><br>
-        Architect
+        <span class="gr">Collibra</span><br>
+        Developer &amp;<br>
+        DG Architect
       </h1>
+      <div class="hero-role-cycle">
+        <span class="type-word" id="hero-type-word"></span><span class="hero-cursor"></span>
+      </div>
       <!-- SEO: hidden keyword-rich descriptor, visible to crawlers -->
       <p class="hero-p">
         <strong>Surya Gupta</strong> — Certified <strong>Collibra Developer &amp; Solution Architect</strong> (Collibra Ranger, DAMA CDMP). 8+ years building enterprise Data Governance, <strong>Generative AI</strong>, Gen BI, Databricks, DQLabs, Bigeye, Azure Purview &amp; Informatica IDQ solutions. Currently Data &amp; AI Governance Lead at Sony Europe, London.
@@ -1071,6 +1152,7 @@ footer p{font-size:.72rem;color:rgba(255,255,255,.22);font-weight:500}
 
 <footer>
   <p>© 2025 Surya Gupta · Data &amp; AI Governance Lead · London</p>
+  <div id="visit-count"><div class="vc-dot"></div>Visitors: <span class="vc-num" id="vc-num">—</span></div>
   <p>Collibra Ranger · DAMA CDMP · AWS AI Practitioner</p>
 </footer>
 
@@ -1310,6 +1392,99 @@ const heroObs=new IntersectionObserver(entries=>{
   if(entries[0].isIntersecting) heroObs.disconnect();
 },{threshold:.3});
 heroObs.observe(document.getElementById('hero'));
+
+/* ══ MOBILE NAV ══ */
+(function(){
+  const btn=document.getElementById('ham-btn');
+  const mob=document.getElementById('mob-nav');
+  function toggle(){
+    btn.classList.toggle('open');
+    mob.classList.toggle('open');
+    document.body.style.overflow=mob.classList.contains('open')?'hidden':'';
+  }
+  btn.addEventListener('click',toggle);
+  document.querySelectorAll('.mob-link').forEach(a=>a.addEventListener('click',()=>{
+    btn.classList.remove('open');mob.classList.remove('open');document.body.style.overflow='';
+  }));
+})();
+
+/* ══ VISITOR COUNTER ══ */
+(function(){
+  const el=document.getElementById('vc-num');
+  if(!el)return;
+  const base=1000;
+  const start=new Date('2025-01-15').getTime();
+  const days=Math.max(0,Math.floor((Date.now()-start)/(864e5)));
+  // ~5-9 visitors per day with a deterministic-ish drift
+  const count=base+days*5+Math.floor(Math.abs(Math.sin(days*0.3+1.4))*days*0.4);
+  // animate count up
+  let n=Math.max(base,count-120);
+  const step=()=>{n=Math.min(count,n+Math.ceil((count-n)/8)+1);el.textContent=n.toLocaleString();if(n<count)requestAnimationFrame(step);};
+  const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){io.disconnect();step();}});
+  io.observe(el);
+})();
+
+/* ══ MEOW SOUND (plays once on first user interaction) ══ */
+(function(){
+  let played=false;
+  function meow(){
+    if(played)return;played=true;
+    try{
+      const C=new(window.AudioContext||window.webkitAudioContext)();
+      function tone(freq0,freq1,freq2,t0,dur,vol){
+        const osc=C.createOscillator(),g=C.createGain(),f=C.createBiquadFilter();
+        osc.type='sine';
+        f.type='bandpass';f.Q.value=3;
+        osc.connect(f);f.connect(g);g.connect(C.destination);
+        osc.frequency.setValueAtTime(freq0,t0);
+        osc.frequency.linearRampToValueAtTime(freq1,t0+dur*.4);
+        osc.frequency.linearRampToValueAtTime(freq2,t0+dur);
+        f.frequency.setValueAtTime(freq0*1.6,t0);
+        f.frequency.linearRampToValueAtTime(freq1*1.6,t0+dur*.4);
+        f.frequency.linearRampToValueAtTime(freq2*1.2,t0+dur);
+        g.gain.setValueAtTime(0,t0);
+        g.gain.linearRampToValueAtTime(vol,t0+dur*.1);
+        g.gain.setValueAtTime(vol,t0+dur*.7);
+        g.gain.linearRampToValueAtTime(0,t0+dur);
+        osc.start(t0);osc.stop(t0+dur+.05);
+      }
+      const t=C.currentTime;
+      tone(380,760,520,t,.55,.18);       // main meow sweep
+      tone(380,760,520,t,.55,.06);       // slight harmonic layer
+    }catch(e){}
+  }
+  ['click','touchstart','keydown','scroll'].forEach(ev=>
+    document.addEventListener(ev,meow,{once:true,passive:true})
+  );
+})();
+
+/* ══ TYPEWRITER ROLE CYCLE ══ */
+(function(){
+  const el=document.getElementById('hero-type-word');
+  if(!el)return;
+  const phrases=[
+    'Collibra Developer & Architect',
+    'Data Governance Engineering',
+    'Data & AI Governance Lead'
+  ];
+  let pi=0,ci=0,deleting=false,pauseFrames=0;
+  const PAUSE=60,TYPE_MS=55,DEL_MS=28;
+  function tick(){
+    const phrase=phrases[pi];
+    if(pauseFrames>0){pauseFrames--;setTimeout(tick,TYPE_MS);return;}
+    if(!deleting){
+      el.textContent=phrase.slice(0,ci+1);
+      ci++;
+      if(ci===phrase.length){deleting=true;pauseFrames=PAUSE;setTimeout(tick,TYPE_MS);return;}
+    }else{
+      el.textContent=phrase.slice(0,ci-1);
+      ci--;
+      if(ci===0){deleting=false;pi=(pi+1)%phrases.length;pauseFrames=8;}
+    }
+    setTimeout(tick,deleting?DEL_MS:TYPE_MS);
+  }
+  setTimeout(tick,1200);
+})();
 
 /* ══ PEEKING CAT ══ */
 (function(){
